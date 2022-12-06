@@ -30,6 +30,7 @@ class Team_model extends CI_Model
 
         $this->db->where('id', $id);
         $this->db->update('teams', $data);
+        $this->session->set_flashdata(['message' =>'Data kelas berhasil diedit!']);
     }
 
     public function delete_item($id)
@@ -39,6 +40,4 @@ class Team_model extends CI_Model
         $this->session->set_flashdata(['message' =>'Data kelas berhasil dihapus!']);
 
     }
-
-
 }
