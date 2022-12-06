@@ -4,10 +4,10 @@
     </div>
 <?php endif?>
 <div class="d-flex justify-content-between align-items-center">
-<h2 class="my-5">Buku Induk</h2>
+<h2 class="my-5">Daftar Kelas</h2>
 
-<a href="<?= site_url('student/create') ?>" class="btn btn-dark">
-    Buat Data
+<a href="<?= site_url('team/create') ?>" class="btn btn-dark">
+    Buat Kelas
 </a>
 </div>
 
@@ -15,9 +15,7 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>Nama Siswa</th>
-            <th>Nomor Induk Siswa</th>
-            <th>Jenis Kelamin</th>
+            <th>Nama Kelas</th>
             <th>ACTION</th>
         </tr>
     </thead>
@@ -26,14 +24,12 @@
         <?php foreach ($items as $item): ?>
         <tr>
             <td><?= $item->id ?></td>
-            <td><?= $item->fullname ?></td>
-            <td><?= $item->nis?></td>
-            <td><?= $item->gender?></td>
+            <td><?= $item->title?></td>
             <td>
-                <a href="<?= site_url("student/update/$item->id") ?>" class="btn btn-primary btn-sm"> 
+                <a href="<?= site_url("team/update/$item->id") ?>" class="btn btn-primary btn-sm"> 
                 edit
                 </a>
-                <a href="<?= site_url("student/delete_process/$item->id") ?>" class="btn btn-danger btn-sm"> 
+                <a href="<?= site_url("team/delete_process/$item->id") ?>" class="btn btn-danger btn-sm"> 
                 hapus
                 </a>
             </td>

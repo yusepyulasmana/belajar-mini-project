@@ -6,19 +6,24 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="<?= site_url('students')?>">Siswa</a>
+        <a class="nav-link" href="<?= site_url('student')?>">Data Siswa</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?= site_url('vacations')?>">Kejuruan</a>
+        <a class="nav-link" href="<?= site_url('vocation')?>">Kejuruan</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?= site_url('teams')?>">Kelas</a>
+        <a class="nav-link" href="<?= site_url('team')?>">Kelas</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?= site_url('years')?>">Tapel</a>
+        <a class="nav-link" href="<?= site_url('year')?>">Tapel</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?= site_url('levels')?>">Tingkat</a>
+        <a class="nav-link" href="<?= site_url('level')?>">Tingkat</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?= site_url('group')?>">Kelompok</a>
+      </li><li class="nav-item">
+        <a class="nav-link" href="<?= site_url('class')?>">Tingkat</a>
       </li>
     </ul>
   </div>
