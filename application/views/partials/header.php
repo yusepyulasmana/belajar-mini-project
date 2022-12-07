@@ -23,7 +23,7 @@
       <li class="nav-item">
         <a class="nav-link" href="<?= site_url('group')?>">Kelompok</a>
       </li><li class="nav-item">
-        <a class="nav-link" href="<?= site_url('class')?>">Kelas</a>
+        <a class="nav-link" href="<?= site_url('classes')?>">Kelas</a>
       </li>
     </ul>
   </div>

@@ -6,7 +6,7 @@ class Student extends CI_Controller
     $this->load->model('student_model');
   }
 
-    public function index()
+  public function index()
   {
       $data['items'] = $this->student_model->get_all();
       $data['page_name'] = 'student/list';
