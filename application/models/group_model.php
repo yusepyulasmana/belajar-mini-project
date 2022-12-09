@@ -3,7 +3,16 @@ class Group_model extends CI_Model
 {
     public function get_all()
     {
-        $querry = $this->db->get('groups');
+        
+        $this->db->select('students.fullname AS student_fullname, vocations.code AS vocation_code, teams.title AS team_title, groups.id');
+        $this->db->from('groups');
+        $this->db->join('students','students.id = groups.student_id');
+        $this->db->join('vocations','vocations.id = groups.vocation_id');
+        $this->db->join('teams','teams.id = groups.team_id');
+        
+        
+        
+        $querry = $this->db->get();
         $result = $querry->result();
         return $result;
     }

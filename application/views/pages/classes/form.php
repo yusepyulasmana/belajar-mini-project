@@ -11,13 +11,13 @@ $target_url = $is_edit ? "classes/update_process/$item->id" : 'classes/create_pr
     </div>
 
     <div class="form-group">
-        <label>Kelompok</label>
-        <input type="text" class="form-control" name="group_id" value="<?= $is_edit ? $item->group_id : '' ?>">
+        <label>Tingkatan</label>
+        <input type="text" class="form-control" name="level_id" value="<?= $is_edit ? $item->level_id : '' ?>">
     </div>
 
     <div class="form-group">
-        <label>Tingkatan</label>
-        <input type="text" class="form-control" name="level_id" value="<?= $is_edit ? $item->level_id : '' ?>">
+        <label>Kelompok</label>
+        <input type="text" class="form-control" name="team_id" value="<?= $is_edit ? $item->team_id : '' ?>">
     </div>
 
     <button class="btn btn-dark">

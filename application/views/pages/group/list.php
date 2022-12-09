@@ -21,9 +21,9 @@
         <?php foreach ($items as $item): ?>
             <tr>
                 <td><?= $item->id ?></td>
-                <td><?= $item->student_id?></td>
-                <td><?= $item->vocation_id?></td>
-                <td><?= $item->team_id?></td>
+                <td><?= $item->student_fullname?></td>
+                <td><?= $item->vocation_code?></td>
+                <td><?= $item->team_title?></td>
                 <td>
                     <a href="<?=site_url("group/update/$item->id") ?>" class="btn btn-primary btn-sm">
                         Edit

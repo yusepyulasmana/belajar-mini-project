@@ -4,7 +4,9 @@ class Classes extends CI_Controller
     public function __construct(Type $var = null) {
     parent::__construct();
     $this->load->model('class_model');
+
     }
+   
     public function index() 
     {
         $data['items']              = $this->class_model->get_all();
@@ -16,7 +18,7 @@ class Classes extends CI_Controller
     }
 
     public function create()
-    {
+    { 
         $data['page_name']      = 'classes/form';
         $data['page_title']     = 'create classes';
 
@@ -54,5 +56,4 @@ class Classes extends CI_Controller
         $this->class_model->delete_item($id);
         redirect(site_url('classes'));
     }
-    
 }
