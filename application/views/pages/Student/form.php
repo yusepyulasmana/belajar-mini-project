@@ -17,10 +17,10 @@
 
     <div class="form-group">
         <label>gender</label>
-        <input type="Enum" class="form-control" name="gender" value="<?= $is_edit ? $item->gender : '' ?>">
-    </div>
-
-    <button class="btn btn-dark">
+        <input type="enum" class="form-control" name="gender" value="<?= $is_edit ? $item->gender : '' ?>">
+    </div> 
+    
+     <button class="btn btn-dark">
         Submit
     </button>
 

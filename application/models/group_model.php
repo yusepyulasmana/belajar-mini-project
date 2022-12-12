@@ -4,7 +4,7 @@ class Group_model extends CI_Model
     public function get_all()
     {
         
-        $this->db->select('students.fullname AS student_fullname, vocations.code AS vocation_code, teams.title AS team_title, groups.id');
+        $this->db->select('groups.*, students.fullname AS student_fullname, vocations.code AS vocation_code, teams.title AS team_title');
         $this->db->from('groups');
         $this->db->join('students','students.id = groups.student_id');
         $this->db->join('vocations','vocations.id = groups.vocation_id');

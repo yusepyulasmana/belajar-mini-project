@@ -12,8 +12,8 @@
         <tr>
             <th>ID</th>
             <th>TAPEL</th>
-            <th>TINGKATAN</th>
             <th>KELOMPOK</th>
+            <th>TINGKATAN</th>
             <th>ACTION</th>
         </tr>
     </thead>
@@ -21,9 +21,10 @@
         <?php foreach($items as $item): ?>
         <tr>
             <td><?= $item->id?></td>
-            <td><?= $item->year_year?></td>
-            <td><?= $item->level_level?></td>
-            <td><?= $item->team_title ?></td>
+            <td><?= $item->year?></td>
+             <td><?= $item->group_name?></td>
+             <td><?= $item->level?></td>
+           
             <td>
                 <a href="<?=site_url("classes/update/$item->id") ?>" class="btn btn-primary btn-sm">
                     Edit

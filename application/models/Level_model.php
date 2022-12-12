@@ -27,7 +27,6 @@ class Level_model extends CI_Model
     {
         $data['level']  = $this->input->post('level');
         
-
         $this->db->where('id', $id);
         $this->db->update('levels', $data);
     }

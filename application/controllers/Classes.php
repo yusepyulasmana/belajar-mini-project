@@ -4,6 +4,9 @@ class Classes extends CI_Controller
     public function __construct(Type $var = null) {
     parent::__construct();
     $this->load->model('class_model');
+    $this->load->model('year_model');
+    $this->load->model('level_model');
+    $this->load->model('group_model');
 
     }
    
@@ -19,6 +22,9 @@ class Classes extends CI_Controller
 
     public function create()
     { 
+        $data['year_options'] = $this->year_model->get_all();
+        $data['level_options'] = $this->level_model->get_all();
+        $data['group_options'] = $this->group_model->get_all();
         $data['page_name']      = 'classes/form';
         $data['page_title']     = 'create classes';
 
@@ -37,6 +43,11 @@ class Classes extends CI_Controller
     public function update($id)
     {
         $data['item']       = $this->class_model->get_item($id);
+        $data['year_options'] = $this->year_model->get_all();
+        $data['level_options'] = $this->level_model->get_all();
+        $data['group_options'] = $this->group_model->get_all();
+        
+        
         $data['page_name']  = 'classes/form';
         $data['page_title'] = 'update classes';
 

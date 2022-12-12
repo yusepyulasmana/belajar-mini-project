@@ -12,7 +12,7 @@
         <a class="nav-link" href="<?= site_url('vocation')?>">Kejuruan</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?= site_url('team')?>">Kelas</a>
+        <a class="nav-link" href="<?= site_url('team')?>">Regu</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<?= site_url('year')?>">Tapel</a>

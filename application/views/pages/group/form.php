@@ -5,19 +5,42 @@
 <form action="<?= site_url($action_url) ?>" method="post">
     <div class="form-group">
         <label>Daftar Kelompok</label>
-    
-    </div>
-    <div class="form-group">
         <label>Siswa</label>
-        <input type="Int" class="form-control" name="student_id" value="<?= $is_edit ? $item->student_id : ''?>">
+        <select class="form-control" name="student_id">
+            <?php foreach ($student_options as $student): ?>
+                <option value="<?= $student->id ?>" <?= $is_edit && $item->student_id == $student->id ? 'selected' : "" ?>>
+                <?= $student->fullname ?>
+                </option>
+            <?php endforeach ?>
+        </select>
     </div>
     <div class="form-group">
         <label>Keahlian</label>
-        <input type="Int" class="form-control" name="vocation_id" value="<?= $is_edit ? $item->vocation_id : ''?>">
+        <select class="form-control" name="vocation_id">
+            <?php foreach ($vocation_options as $vocation): ?>
+                <option value="<?= $vocation->id ?>" <?= $is_edit && $item->vocation_id == $vocation->id ? 'selected' : "" ?>>
+                <?= $vocation->code ?>
+                </option>
+            <?php endforeach ?>
+        </select>
+    
     </div>
     <div class="form-group">
-        <label>Kelompok</label>
-        <input type="Int" class="form-control" name="team_id" value="<?= $is_edit ? $item->team_id : ''?>">
+        <label>KELOMPOK</label>
+        <select class="form-control" name="team_id">
+            <?php foreach ($team_options as $team): ?>
+                <option value="<?= $team->id ?>" <?= $is_edit && $item->team_id == $team->id ? 'selected' : "" ?>>
+                <?= $team->title?>
+                </option>
+            <?php endforeach ?>
+        </select>
+    
+    
+    
+    
+    
+    
+    
     </div>
     <button class="btn btn-primary">
         SUBMIT

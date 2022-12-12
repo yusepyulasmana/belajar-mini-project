@@ -4,6 +4,10 @@ class Group extends CI_Controller
     function __construct(Type $var = null) {
     parent::__construct();
     $this->load->model('group_model');
+    $this->load->model('student_model');
+    $this->load->model('vocation_model');
+    $this->load->model('team_model');
+
     }
 
     public function index()
@@ -17,8 +21,11 @@ class Group extends CI_Controller
 
     public function create() 
     {
+        $data['student_options'] = $this->student_model->get_all();
+        $data['vocation_options'] = $this->vocation_model->get_all();
+        $data['team_options'] = $this->team_model->get_all();
         $data['page_name']      = 'group/form';
-        $data['page_title']     = 'create group';
+        $data['page_title']     = 'create group Data';
 
         $this->load->view('main' , $data);
     }
@@ -34,6 +41,10 @@ class Group extends CI_Controller
     public function update($id)
     {
         $data['item']           = $this->group_model->get_item($id);
+        $data['student_options'] = $this->student_model->get_all();
+        $data['vocation_options'] = $this->vocation_model->get_all();
+        $data['team_options'] = $this->team_model->get_all();
+       
         $data['page_name']      = 'group/form';
         $data['page_title']     = 'update group';
     
