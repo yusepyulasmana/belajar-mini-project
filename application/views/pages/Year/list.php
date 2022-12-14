@@ -11,8 +11,13 @@
 </a>
 </div>
 
-<table class="table">
-    <thead>
+<table class="table table-bordered">
+    <thead class="thead-dark">
+            <style>
+            th{text-align: center;}
+            </style>
+
+
         <tr>
             <th>ID</th>
             <th>Tapel</th>
@@ -22,6 +27,9 @@
 
     <tbody>
         <?php foreach ($items as $item): ?>
+            <style>
+            td{text-align: center;}
+            </style>
         <tr>
             <td><?= $item->id ?></td>
             <td><?= $item->year?></td>

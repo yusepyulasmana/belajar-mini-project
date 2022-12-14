@@ -4,15 +4,14 @@ class Class_model extends CI_Model
     public function get_all()
     {
         $this->db->select('years.year,
-                            levels.level,
-                            CONCAT(students.fullname, "-", vocations.code, "-", teams.title) as group_name,
+                            CONCAT(levels.level, "-", vocations.code, "-", teams.title) as group_name,students.fullname,
                             classes.id');
         $this->db->from('classes');
         $this->db->join('years','years.id = classes.year_id');
-        $this->db->join('levels','levels.id = classes.level_id');
         $this->db->join('groups', 'groups.id = classes.group_id');
-
-        $this->db->join('students','students.id = groups.student_id');
+        $this->db->join('students','students.id = classes.Student_id');
+        
+        $this->db->join('levels','levels.id = groups.level_id');
         $this->db->join('vocations','vocations.id = groups.vocation_id');
         $this->db->join('teams','teams.id = groups.team_id');
 
@@ -34,7 +33,7 @@ class Class_model extends CI_Model
     {
         $data['year_id']          = $this->input->post('year_id');
         $data['group_id']         = $this->input->post('group_id');
-        $data['level_id']         = $this->input->post('level_id');
+        $data['student_id']         = $this->input->post('student_id');
 
         $this->db->insert('classes', $data);
     }
@@ -43,7 +42,7 @@ class Class_model extends CI_Model
     {
         $data['year_id']          = $this->input->post('year_id');
         $data['group_id']         = $this->input->post('group_id');
-        $data['level_id']         = $this->input->post('level_id');
+        $data['student_id']         = $this->input->post('student_id');
         
         $this->db->where('id', $id);
         $this->db->update('classes', $data);
@@ -57,4 +56,3 @@ class Class_model extends CI_Model
     }
 
 }
-//concat(students.fullname. "//vocations.code. "-", teams.title. "-" ) as group_name

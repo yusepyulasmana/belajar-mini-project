@@ -12,16 +12,23 @@
 </div>
 
 <table class="table">
-    <thead>
+    <thead class="thead-dark">
+            <style>
+            th{text-align: center;}
+            </style>
         <tr>
             <th>ID</th>
             <th>Nama Kelas</th>
             <th>ACTION</th>
+
         </tr>
     </thead>
 
     <tbody>
         <?php foreach ($items as $item): ?>
+            <style>
+                td{text-align: center;}
+            </style>
         <tr>
             <td><?= $item->id ?></td>
             <td><?= $item->title?></td>

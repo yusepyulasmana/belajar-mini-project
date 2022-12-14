@@ -2,14 +2,16 @@
     $is_edit = isset($item);
     $action_url = $is_edit ? "group/update_process/$item->id" : 'group/create_process';
 ?>
+<h2 class="my-4"><?= $is_edit ? 'Edit' : 'Buat '?> Kelas </h2>
 <form action="<?= site_url($action_url) ?>" method="post">
     <div class="form-group">
         <label>Daftar Kelompok</label>
-        <label>Siswa</label>
-        <select class="form-control" name="student_id">
-            <?php foreach ($student_options as $student): ?>
-                <option value="<?= $student->id ?>" <?= $is_edit && $item->student_id == $student->id ? 'selected' : "" ?>>
-                <?= $student->fullname ?>
+        <br>
+        <label>Tingkatan</label>
+        <select class="form-control" name="level_id">
+            <?php foreach ($level_options as $level): ?>
+                <option value="<?= $level->id ?>" <?= $is_edit && $item->level_id == $level->id ? 'selected' : " " ?>>
+                <?= $level->level ?>
                 </option>
             <?php endforeach ?>
         </select>
@@ -34,13 +36,6 @@
                 </option>
             <?php endforeach ?>
         </select>
-    
-    
-    
-    
-    
-    
-    
     </div>
     <button class="btn btn-primary">
         SUBMIT

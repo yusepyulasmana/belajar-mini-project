@@ -8,20 +8,20 @@
     Tambah Kelompok
 </a>
 <table class="table"> 
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>SISWA</th>
-            <th>KEJURUAN</th>
-            <th>KELOMPOK</th>
-            <th>ACTION</th>
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">TINGKATAN</th>
+      <th scope="col">KEJURUAN</th>
+      <th scope="col">KELOMPOK</th>
+      <th scope="col">ACTION</th>
         </tr>
     </thead>
     <tbody>
         <?php foreach ($items as $item): ?>
             <tr>
                 <td><?= $item->id ?></td>
-                <td><?= $item->student_fullname?></td>
+                <td><?= $item->level_level?></td>
                 <td><?= $item->vocation_code?></td>
                 <td><?= $item->team_title?></td>
                 <td>

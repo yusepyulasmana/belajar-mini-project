@@ -4,7 +4,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+    <ul class="nav nav-tabs">
       <li class="nav-item">
         <a class="nav-link" href="<?= site_url('student')?>">Data Siswa</a>
       </li>
@@ -25,6 +25,11 @@
       </li><li class="nav-item">
         <a class="nav-link" href="<?= site_url('classes')?>">Kelas</a>
       </li>
+      </li><li class="nav-item">
+        <a class="nav-link" href="<?= site_url('auth/logout')?>">Keluar</a>
+      </li>
     </ul>
   </div>
 </nav>
+
+

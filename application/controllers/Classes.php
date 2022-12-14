@@ -5,8 +5,13 @@ class Classes extends CI_Controller
     parent::__construct();
     $this->load->model('class_model');
     $this->load->model('year_model');
-    $this->load->model('level_model');
     $this->load->model('group_model');
+    $this->load->model('student_model');
+    if (empty($this->session->user_id))
+    {
+      redirect('auth/login');
+    }
+    
 
     }
    
@@ -23,8 +28,9 @@ class Classes extends CI_Controller
     public function create()
     { 
         $data['year_options'] = $this->year_model->get_all();
-        $data['level_options'] = $this->level_model->get_all();
         $data['group_options'] = $this->group_model->get_all();
+        $data['student_options'] = $this->student_model->get_all();
+        
         $data['page_name']      = 'classes/form';
         $data['page_title']     = 'create classes';
 
@@ -44,8 +50,9 @@ class Classes extends CI_Controller
     {
         $data['item']       = $this->class_model->get_item($id);
         $data['year_options'] = $this->year_model->get_all();
-        $data['level_options'] = $this->level_model->get_all();
         $data['group_options'] = $this->group_model->get_all();
+        $data['student_options'] = $this->student_model->get_all();
+        
         
         
         $data['page_name']  = 'classes/form';

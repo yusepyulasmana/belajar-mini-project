@@ -4,9 +4,9 @@ class Group_model extends CI_Model
     public function get_all()
     {
         
-        $this->db->select('groups.*, students.fullname AS student_fullname, vocations.code AS vocation_code, teams.title AS team_title');
+        $this->db->select('groups.*, levels.level AS level_level, vocations.code AS vocation_code, teams.title AS team_title');
         $this->db->from('groups');
-        $this->db->join('students','students.id = groups.student_id');
+        $this->db->join('levels','levels.id = groups.level_id');
         $this->db->join('vocations','vocations.id = groups.vocation_id');
         $this->db->join('teams','teams.id = groups.team_id');
         
@@ -27,7 +27,7 @@ class Group_model extends CI_Model
 
     public function create_item() 
     {
-        $data['student_id']       = $this->input->post('student_id');
+        $data['level_id']       = $this->input->post('level_id');
         $data['vocation_id']      = $this->input->post('vocation_id');
         $data['team_id']          = $this->input->post('team_id');
 
@@ -37,7 +37,7 @@ class Group_model extends CI_Model
 
     public function update_item($id)
     {
-        $data['student_id']        = $this->input->post('student_id');
+        $data['level_id']        = $this->input->post('level_id');
         $data['vocation_id']       = $this->input->post('vocation_id');
         $data['team_id']           = $this->input->post('team_id');
 

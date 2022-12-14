@@ -7,23 +7,25 @@
 <a href=" <?=site_url('classes/create') ?>" class="btn btn-primary my-5">
     Tambah Kelas
 </a>
-<table class="table">
-    <thead>
+<table class="table table-bordered">
+    <thead class="thead-dark">
         <tr>
-            <th>ID</th>
-            <th>TAPEL</th>
-            <th>KELOMPOK</th>
-            <th>TINGKATAN</th>
-            <th>ACTION</th>
+        <th scope="col">ID</th>
+        <th scope="col">TAPEL</th>
+        <th scope="col">KELOMPOK</th>
+        <th scope="col">NAMA SISWA</th>
+        <th scope="col">ACTION</th>
+        
         </tr>
     </thead>
+
     <tbody>
         <?php foreach($items as $item): ?>
         <tr>
             <td><?= $item->id?></td>
             <td><?= $item->year?></td>
              <td><?= $item->group_name?></td>
-             <td><?= $item->level?></td>
+             <td><?= $item->fullname?></td>
            
             <td>
                 <a href="<?=site_url("classes/update/$item->id") ?>" class="btn btn-primary btn-sm">

@@ -4,9 +4,13 @@ class Group extends CI_Controller
     function __construct(Type $var = null) {
     parent::__construct();
     $this->load->model('group_model');
-    $this->load->model('student_model');
+    $this->load->model('level_model');
     $this->load->model('vocation_model');
     $this->load->model('team_model');
+    if (empty($this->session->user_id))
+    {
+      redirect('auth/login');
+    }
 
     }
 
@@ -21,7 +25,7 @@ class Group extends CI_Controller
 
     public function create() 
     {
-        $data['student_options'] = $this->student_model->get_all();
+        $data['level_options'] = $this->level_model->get_all();
         $data['vocation_options'] = $this->vocation_model->get_all();
         $data['team_options'] = $this->team_model->get_all();
         $data['page_name']      = 'group/form';
@@ -40,10 +44,10 @@ class Group extends CI_Controller
 
     public function update($id)
     {
-        $data['item']           = $this->group_model->get_item($id);
-        $data['student_options'] = $this->student_model->get_all();
-        $data['vocation_options'] = $this->vocation_model->get_all();
-        $data['team_options'] = $this->team_model->get_all();
+        $data['item']                = $this->group_model->get_item($id);
+        $data['level_options']       = $this->level_model->get_all();
+        $data['vocation_options']    = $this->vocation_model->get_all();
+        $data['team_options']        = $this->team_model->get_all();
        
         $data['page_name']      = 'group/form';
         $data['page_title']     = 'update group';

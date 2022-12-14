@@ -4,6 +4,10 @@ class Team extends CI_Controller
   public function __construct(Type $var = null) {
     parent::__construct();
     $this->load->model('team_model');
+    if (empty($this->session->user_id))
+    {
+      redirect('auth/login');
+    }
   }
 
     public function index()

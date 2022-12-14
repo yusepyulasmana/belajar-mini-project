@@ -11,14 +11,14 @@
 </a>
 </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>DI</th>
-            <th>Kompetensi Keahlian</th>
-            <th>Kode Keahlian</th>
-            <th>ACTION</th>
-        </tr>
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Kompetensi Keahlian</th>
+      <th scope="col">Kode Keahlian</th>
+      <th scope="col">ACTION</th>
+    </tr>
     </thead>
 
     <tbody>

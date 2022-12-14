@@ -11,15 +11,14 @@
 </a>
 </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nama Siswa</th>
-            <th>Nomor Induk Siswa</th>
-            <th>Jenis Kelamin</th>
-            <th>ACTION</th>
-        </tr>
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nama Siswa</th>
+      <th scope="col">Nomor Induk Siswa</th>
+      <th scope="col">Jenis Kelamin</th>
+      <th scope="col">ACTION</th>
     </thead>
 
     <tbody>
